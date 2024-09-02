@@ -32,7 +32,7 @@
 		<hr class="sidebar-divider my-0">
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
-			<a class="nav-link" href="servico.php">
+			<a class="nav-link" href="animal.php">
 			<i class="fas fa-skiing"></i>
 				<span>Animais</span></a>
 				
@@ -41,7 +41,7 @@
 		<hr class="sidebar-divider my-0">
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
-			<a class="nav-link" href="servico.php">
+			<a class="nav-link" href="alimento.php">
 				<i class="fas fa-fw fa-wrench"></i>
 				<span>Alimentos</span></a>
 		</li>
