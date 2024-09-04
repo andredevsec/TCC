@@ -100,7 +100,6 @@ unset ($_SESSION['data']);
                                             <div class="modal-footer">
                                              <a href="remove_alimento.php?cod=<?=$dados['cod'];?>"><button class="btn btn-primary btn-user" type="button">Confirmar</button></a>
                                              <a href="alimento.php"><button class="btn btn-danger btn-user" type="button">Cancelar</button></a>
-
                                          </div>
                                      </div>
                                  </div>

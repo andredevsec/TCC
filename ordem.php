@@ -59,7 +59,7 @@ require_once('sidebar.php');
                         <thead>
                             <tr>
                                 <th style="display:none" ;>cod</th>
-                                <th>Nome do Cliente</th>
+                                <th>Nome do Aluno</th>
                                 <th>Terceirizado</th>
                                 <th>Serviço</th>
                                 <th class="text-center">Data do Serviço</th>
@@ -76,7 +76,7 @@ require_once('sidebar.php');
                             ?>
                                 <tr>
                                     <td style="display:none" ;><?= $dados['cod'] ?></td>
-                                    <td><?= $dados['nome_cliente'] ?></td>
+                                    <td><?= $dados['nome_aluno'] ?></td>
                                     <td><?= $dados['nome_terceirizado'] ?></td>
                                     <td><?= $dados['nome_servico'] ?></td>
                                     <td class="text-center"><?= date('d/m/Y', strtotime($dados['data_servico'])) ?></td>
@@ -119,7 +119,7 @@ require_once('sidebar.php');
 
     </div>
     <!-- End of Main Content -->
-     
+
     <?php
     require_once('footer.php');
     ?>

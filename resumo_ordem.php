@@ -4,7 +4,7 @@ require_once('valida_session.php');
 require_once('header.php'); 
 require_once('sidebar.php'); 
 require_once ("bd/bd_ordem.php");
-require_once ("bd/bd_cliente.php");
+require_once ("bd/bd_aluno.php");
 require_once ("bd/bd_terceirizado.php");
 
 $dadosOrdem = buscaOrdemadd();
@@ -61,7 +61,7 @@ if (!empty($dadosOrdem)) {
                 <form class="user" action="cad_ordem_envia.php" method="post" >
                     
                         <div class="form-group">
-                            <label> Nome do Cliente </label>
+                            <label> Nome do Aluno </label>
                             <input type="text" class="form-control form-control-user" id="nome_cliente" name="nome_cliente" value="<?= $nome_cliente ?>" readonly>
                         </div>
 

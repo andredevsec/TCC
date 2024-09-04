@@ -15,7 +15,7 @@ else{
 		$dados = checaUsuario($email,$senha);
 	}elseif($perfil == 2){
 		require_once ("bd/bd_cliente.php");
-		$dados = checaCliente($email,$senha);
+		$dados = checaAluno($email,$senha);
 	}else{
 		require_once ("bd/bd_terceirizado.php");
 		$dados = checaTerceirizado($email,$senha);

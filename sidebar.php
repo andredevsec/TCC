@@ -33,7 +33,7 @@
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
 			<a class="nav-link" href="animal.php">
-			<i class="fas fa-skiing"></i>
+			<i class="fas fa-paw"></i>
 				<span>Animais</span></a>
 				
 		</li>
@@ -42,7 +42,7 @@
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
 			<a class="nav-link" href="alimento.php">
-				<i class="fas fa-fw fa-wrench"></i>
+			<i class='fas fa-drumstick-bite'></i>
 				<span>Alimentos</span></a>
 		</li>
 
@@ -60,7 +60,7 @@
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
 			<a class="nav-link" href="medicamento.php">
-				<i class="fas fa-fw fa-user"></i>
+			<i class="fa fa-medkit" aria-hidden="true"></i>
 				<span>Medicamentos</span></a>
 		</li>
 

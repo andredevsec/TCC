@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("bd/bd_usuario.php");
-require_once("bd/bd_cliente.php");
+require_once("bd/bd_aluno.php");
 require_once("bd/bd_terceirizado.php");
 require_once("bd/bd_troca_senha.php");
 
