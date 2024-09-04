@@ -59,6 +59,15 @@
 		<hr class="sidebar-divider my-0">
 		<!-- Nav Item - Dashboard -->
 		<li class="nav-item active">
+			<a class="nav-link" href="medicamento.php">
+				<i class="fas fa-fw fa-user"></i>
+				<span>Medicamentos</span></a>
+		</li>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider my-0">
+		<!-- Nav Item - Dashboard -->
+		<li class="nav-item active">
 			<a class="nav-link" href="terceirizado.php">
 				<i class="fa fa-handshake"></i>
 				<span>Terceirizados</span></a>

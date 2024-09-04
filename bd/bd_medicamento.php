@@ -2,26 +2,26 @@
 
 require_once("conecta_bd.php");
 
-function listaAlimentos() {
+function listaMedicamentos() {
     $conexao = conecta_bd();
-    $alimentos = array();
-    $query = "SELECT * FROM alimento ORDER BY cod";
+    $medicamentos = array();
+    $query = "SELECT * FROM medicamento ORDER BY cod";
     $stmt = mysqli_prepare($conexao, $query);
     mysqli_stmt_execute($stmt);
     $resultado = mysqli_stmt_get_result($stmt);
     
     while ($dados = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
-        array_push($alimentos, $dados);
+        array_push($medicamentos, $dados);
     }
 
     mysqli_stmt_close($stmt);
     mysqli_close($conexao);
-    return $alimentos;
+    return $medicamentos;
 }
 
-function buscaAlimento($codigo) {
+function buscaMedicamento($codigo) {
     $conexao = conecta_bd();
-    $query = "SELECT * FROM alimento WHERE cod = ?";
+    $query = "SELECT * FROM medicamento WHERE cod = ?";
     $stmt = mysqli_prepare($conexao, $query);
     mysqli_stmt_bind_param($stmt, 'i', $codigo);
     mysqli_stmt_execute($stmt);
@@ -33,9 +33,9 @@ function buscaAlimento($codigo) {
     return $dados;
 }
 
-function cadastraAlimento($nome, $valor, $quantidade, $data) {
+function cadastraMedicamento($nome, $valor, $quantidade, $data) {
     $conexao = conecta_bd();
-    $query = "INSERT INTO alimento (nome, valor, quantidade, data) 
+    $query = "INSERT INTO medicamento (nome, valor, quantidade, data) 
               VALUES (?, ?, ?, ?)";
     $stmt = mysqli_prepare($conexao, $query);
     mysqli_stmt_bind_param($stmt, 'sdss', $nome, $valor, $quantidade, $data);
@@ -47,9 +47,9 @@ function cadastraAlimento($nome, $valor, $quantidade, $data) {
     return $dados;
 }
 
-function removeAlimento($codigo) {
+function removeMedicamento($codigo) {
     $conexao = conecta_bd();
-    $query = "DELETE FROM alimento WHERE cod = ?";
+    $query = "DELETE FROM medicamento WHERE cod = ?";
     $stmt = mysqli_prepare($conexao, $query);
     mysqli_stmt_bind_param($stmt, 'i', $codigo);
     mysqli_stmt_execute($stmt);
@@ -60,9 +60,9 @@ function removeAlimento($codigo) {
     return $dados;
 }
 
-function buscaAlimentoEditar($codigo) {
+function buscaMedicamentoEditar($codigo) {
     $conexao = conecta_bd();
-    $query = "SELECT * FROM alimento WHERE cod = ?";
+    $query = "SELECT * FROM medicamento WHERE cod = ?";
     $stmt = mysqli_prepare($conexao, $query);
     mysqli_stmt_bind_param($stmt, 'i', $codigo);
     mysqli_stmt_execute($stmt);
@@ -74,9 +74,9 @@ function buscaAlimentoEditar($codigo) {
     return $dados;
 }
 
-function editarAlimento($codigo, $nome, $valor, $quantidade, $data) {
+function editarMedicamento($codigo, $nome, $valor, $quantidade, $data) {
     $conexao = conecta_bd();
-    $query = "UPDATE alimento 
+    $query = "UPDATE medicamento 
               SET nome = ?, valor = ?, quantidade = ?, data = ?
               WHERE cod = ?";
     $stmt = mysqli_prepare($conexao, $query);

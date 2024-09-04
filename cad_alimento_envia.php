@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $nome = $_POST["nome"];
 $valor = $_POST["valor"];
 $quantidade = $_POST["quantidade"];
@@ -7,7 +8,8 @@ $data = $_POST["data"]; // Data fornecida pelo formulário
 
 require_once("bd/bd_alimento.php");
 
-$dados = cadastraAlimento($nome, $valor, $quantidade, $data);
+$dados = cadastraAlimento($nome, $valor, $quantidade, $data); 
+
 if ($dados == 1) {
     $_SESSION['texto_sucesso'] = 'Dados do alimento adicionados com sucesso.';
     unset($_SESSION['nome']);

@@ -21,10 +21,10 @@ unset ($_SESSION['data']);
 
                 <div class="row">
                     <div class="col-md-8">
-                        <h6 class="m-0 font-weight-bold text-primary" id="title">GERENCIAR INFORMAÇÕES DOS ALIMENTOS</h6>
+                        <h6 class="m-0 font-weight-bold text-primary" id="title">GERENCIAR INFORMAÇÕES DOS MEDICAMENTOS</h6>
                     </div>
                     <div class="col-md-4 card_button_title">
-                        <a title="Adicionar novo alimento" href="cad_alimento.php"><button type="button" class="btn btn-primary btn-sm card_button_title" data-toggle="modal" id=" "> <i class="fas fa-fw fa-wrench">&nbsp;</i> Adicionar Alimento</button></a>
+                        <a title="Adicionar novo medicamento" href="cad_medicamento.php"><button type="button" class="btn btn-primary btn-sm card_button_title" data-toggle="modal" id=" "> <i class="fas fa-fw fa-wrench">&nbsp;</i> Adicionar Medicamento</button></a>
                     </div>
                 </div>
 
@@ -73,9 +73,9 @@ unset ($_SESSION['data']);
                         </thead>
                         <tbody>
                             <?php 
-                            require_once ("bd/bd_alimento.php");
-                            $alimento = listaAlimentos(); 
-                            foreach($alimento as $dados): 
+                            require_once("bd/bd_medicamento.php");
+                            $medicamento = listaMedicamentos(); 
+                            foreach($medicamento as $dados): 
                                 ?>
                                 <tr>
                                     <td style="display:none";><?= $dados['cod'] ?></td>
@@ -84,7 +84,7 @@ unset ($_SESSION['data']);
                                     <td><?= $dados['quantidade'] ?></td>
                                     <td><?= date("d/m/Y", strtotime($dados['data'])); ?></td>
                                     <td class="text-center"> 
-                                        <a title="Atualizar" href="editar_alimento.php?cod=<?=$dados['cod']; ?>" class="btn btn-sm btn-success"><i class="fas fa-edit">&nbsp;</i>Atualizar</a>
+                                        <a title="Atualizar" href="editar_medicamento.php?cod=<?=$dados['cod']; ?>" class="btn btn-sm btn-success"><i class="fas fa-edit">&nbsp;</i>Atualizar</a>
                                     </td>
                                     <td class="text-center">
                                         <a title="Excluir" href="javascript(void)" data-toggle="modal" data-target="#excluir-<?=$dados['cod'];?>" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt">&nbsp;</i>Excluir</a>
@@ -94,18 +94,17 @@ unset ($_SESSION['data']);
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Excluir alimento</h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Excluir medicamento</h5>
                                             </div>
                                             <div class="modal-body">Deseja realmente excluir esta informação?</div>
                                             <div class="modal-footer">
-                                             <a href="remove_alimento.php?cod=<?=$dados['cod'];?>"><button class="btn btn-primary btn-user" type="button">Confirmar</button></a>
-                                             <a href="alimento.php"><button class="btn btn-danger btn-user" type="button">Cancelar</button></a>
+                                             <a href="remove_medicamento.php?cod=<?=$dados['cod'];?>"><button class="btn btn-primary btn-user" type="button">Confirmar</button></a>
+                                             <a href="medicamento.php"><button class="btn btn-danger btn-user" type="button">Cancelar</button></a>
 
                                          </div>
                                      </div>
                                  </div>
                              </div>
-
 
                             <?php endforeach ?>   
                         </tbody>
