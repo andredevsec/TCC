@@ -30,7 +30,7 @@ require_once ("bd/bd_ordem.php");
                                     $total = consultaStatusUsuario($status_aberto);
                                     echo isset($total['total']) ? $total['total'] : '0';
                                 } elseif ($_SESSION['perfil'] == 2) {
-                                    $total = consultaStatusCliente($_SESSION['cod_usu'], $status_aberto);
+                                    $total = consultaStatusAluno($_SESSION['cod_usu'], $status_aberto);
                                     echo isset($total['total']) ? $total['total'] : '0';
                                 } elseif ($_SESSION['perfil'] == 3) {
                                     $total = consultaStatusTerceirizado($_SESSION['cod_usu'], $status_aberto);
@@ -62,7 +62,7 @@ require_once ("bd/bd_ordem.php");
                                     $total = consultaStatusUsuario($status_execucao);
                                     echo isset($total['total']) ? $total['total'] : '0';
                                 } elseif ($_SESSION['perfil'] == 2) {
-                                    $total = consultaStatusCliente($_SESSION['cod_usu'], $status_execucao);
+                                    $total = consultaStatusAluno($_SESSION['cod_usu'], $status_execucao);
                                     echo isset($total['total']) ? $total['total'] : '0';
                                 } elseif ($_SESSION['perfil'] == 3) {
                                     $total = consultaStatusTerceirizado($_SESSION['cod_usu'], $status_execucao);
@@ -94,7 +94,7 @@ require_once ("bd/bd_ordem.php");
                                     $total = consultaStatusUsuario($status_concluida);
                                     echo isset($total['total']) ? $total['total'] : '0';
                                 } elseif ($_SESSION['perfil'] == 2) {
-                                    $total = consultaStatusCliente($_SESSION['cod_usu'], $status_concluida);
+                                    $total = consultaStatusAluno($_SESSION['cod_usu'], $status_concluida);
                                     echo isset($total['total']) ? $total['total'] : '0';
                                 } elseif ($_SESSION['perfil'] == 3) {
                                     $total = consultaStatusTerceirizado($_SESSION['cod_usu'], $status_concluida);
