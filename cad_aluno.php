@@ -48,7 +48,7 @@
                 unset($_SESSION['texto_sucesso']);
             endif;
             ?>
-                <form class="user" action="cad_aluno_envia.php" method="post" ></form>
+                <form class="user" action="cad_aluno_envia.php" method="post" >
                     <div class="form-group row">
                         <div class="col-sm-6 mb-3 mb-sm-0">
                             <label> Nome Completo </label>
@@ -127,7 +127,6 @@
                                 <option value="2">Inativo</option>
                             </select>
                         </div>
-                        
                     </div>                    
 
                     <div class="card-footer text-muted" id="btn-form">

@@ -1,73 +1,79 @@
 <?php
-
 require_once("conecta_bd.php");
 
-function listaServicos(){
+function listaServicos() {
     $conexao = conecta_bd();
     $servicos = array();
+
     $query = "SELECT * FROM servico ORDER BY nome";
-    $resultado = mysqli_query($conexao, $query);
-    while ($dados = mysqli_fetch_array($resultado)){
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_execute($stmt);
+    $resultado = mysqli_stmt_get_result($stmt);
+
+    while ($dados = mysqli_fetch_array($resultado)) {
         array_push($servicos, $dados);
     }
+
     mysqli_close($conexao);
     return $servicos;
 }
 
-function buscaServico($email){
+function buscaServico($email) {
     $conexao = conecta_bd();
-    $query = "select *
-              from servico
-              where email='$email'";
 
-    $resultado = mysqli_query($conexao, $query);
+    $query = "SELECT * FROM servico WHERE email = ?";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $resultado = mysqli_stmt_get_result($stmt);
     $dados = mysqli_num_rows($resultado);
 
     return $dados;
 }
 
-function cadastraServico($nome,$valor,$data){
-
+function cadastraServico($nome, $valor, $data) {
     $conexao = conecta_bd();
-    $query = "Insert Into servico(nome,valor,data) values('$nome','$valor','$data')";
 
-    $resultado = mysqli_query($conexao, $query);
-    $dados = mysqli_affected_rows($conexao);
+    $query = "INSERT INTO servico (nome, valor, data) VALUES (?, ?, ?)";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, "sds", $nome, $valor, $data);
+    mysqli_stmt_execute($stmt);
 
-    return $dados;
-
+    return mysqli_stmt_affected_rows($stmt);
 }
 
-function removeServico($codigo){
-     $conexao = conecta_bd();
-    $query = "delete from servico where cod = '$codigo'";
+function removeServico($codigo) {
+    $conexao = conecta_bd();
 
-    $resultado = mysqli_query($conexao, $query);
-    $dados = mysqli_affected_rows($conexao);
+    $query = "DELETE FROM servico WHERE cod = ?";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, "i", $codigo);
+    mysqli_stmt_execute($stmt);
 
-    return $dados;
-
+    return mysqli_stmt_affected_rows($stmt);
 }
 
-function buscaServicoeditar($codigo){
+function buscaServicoeditar($codigo) {
     $conexao = conecta_bd();
-    $query = "select *
-              from servico
-              where cod='$codigo'";
 
-    $resultado = mysqli_query($conexao, $query);
+    $query = "SELECT * FROM servico WHERE cod = ?";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, "i", $codigo);
+    mysqli_stmt_execute($stmt);
+    $resultado = mysqli_stmt_get_result($stmt);
     $dados = mysqli_fetch_array($resultado);
 
     return $dados;
-
 }
 
-function editarServico($codigo, $nome, $valor){
+function editarServico($codigo, $nome, $valor) {
     $conexao = conecta_bd();
-    $query = "update servico set nome = '$nome', valor = '$valor' WHERE cod = '$codigo'";
-    $resultado = mysqli_query($conexao, $query);
-    $dados = mysqli_affected_rows($conexao);
-    return $dados;
-}
 
+    $query = "UPDATE servico SET nome = ?, valor = ? WHERE cod = ?";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, "sdi", $nome, $valor, $codigo);
+    mysqli_stmt_execute($stmt);
+
+    return mysqli_stmt_affected_rows($stmt);
+}
 ?>

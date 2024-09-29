@@ -1,5 +1,5 @@
+<?php
 require_once ("bd/bd_aluno.php");
-$dados = buscaAluno($email);
 
 if($dados != 0){
 	$_SESSION['texto_erro'] = 'Este email já existe cadastrado no sistema!';
@@ -15,7 +15,7 @@ if($dados != 0){
 	header ("Location:cad_aluno.php");
 }else{
 
-	$dados = cadastraAluno($nome,$email,$senha,$cep,$endereco,$numero,$bairro,$cidade,$uf,$telefone,$status,$perfil,$data);
+	$dados = cadastraAluno($nome, $email, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $telefone, $status, $perfil, $data);
 
 	if($dados == 1){
 		$_SESSION['texto_sucesso'] = 'Dados adicionados com sucesso.';

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $nome = $_POST["nome"];
 $senha = md5($_POST["senha"]);
 $email = $_POST["email"];
