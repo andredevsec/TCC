@@ -119,7 +119,7 @@ require_once('sidebar.php');
                         <div class="col-sm-6">
                             <label> Situação </label>
                             <select class="form-control" id="status" name="status" required>
-                                <option value=""> </option>
+                                <option value=""></option>
                                 <option value="1">Ativo</option>
                                 <option value="2">Inativo</option>
                             </select>

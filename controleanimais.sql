@@ -38,12 +38,15 @@ CREATE TABLE IF NOT EXISTS `aluno` (
   `cod` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `curso` varchar(100) NOT NULL,
+  `ra` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `senha` varchar(100) NOT NULL,
+  `cep` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `numero` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `bairro` varchar(100) NOT NULL,
   `cidade` varchar(100) NOT NULL,
+  `uf` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `telefone` varchar(100) NOT NULL,
   `status` int NOT NULL,
   `perfil` int NOT NULL,
@@ -52,8 +55,8 @@ CREATE TABLE IF NOT EXISTS `aluno` (
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Copiando dados para a tabela controleanimais.aluno: ~1 rows (aproximadamente)
-INSERT INTO `aluno` (`cod`, `nome`, `curso`, `email`, `senha`, `endereco`, `numero`, `bairro`, `cidade`, `telefone`, `status`, `perfil`, `data`) VALUES
-	(8, 'aluno1', 'curso1', 'aluno1@gmail.com', 'a9f598a223a555dd4acaaa5a5a46a9e8', 'aluno1', '11', 'aluno1', 'aluno1', '16112341234', 1, 2, '2024-08-04');
+INSERT INTO `aluno` (`cod`, `nome`, `curso`, `ra`, `email`, `senha`, `cep`, `endereco`, `numero`, `bairro`, `cidade`,`uf`, `telefone`, `status`, `perfil`, `data`) VALUES
+	(8, 'aluno1', 'curso1', '123', 'aluno1@gmail.com', 'a9f598a223a555dd4acaaa5a5a46a9e8', '37750000', 'aluno1', '11', 'aluno1', 'aluno1', 'MG', '16112341234', 1, 2, '2024-08-04');
 
 -- Copiando estrutura para tabela controleanimais.animal
 CREATE TABLE IF NOT EXISTS `animal` (
