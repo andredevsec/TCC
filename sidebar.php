@@ -37,6 +37,18 @@
 				<span>Animais</span></a>
 				
 		</li>
+
+		<!-- Divider -->
+		<hr class="sidebar-divider my-0">
+		<!-- Nav Item - Dashboard -->
+		<li class="nav-item active">
+			<a class="nav-link" href="agrupamento.php">
+			<i class="fas fa-paw"></i>
+				<span>Agrupoamento</span></a>
+				
+		</li>
+
+	
 		<!-- Divider -->
 		<hr class="sidebar-divider my-0">
 		<!-- Nav Item - Dashboard -->

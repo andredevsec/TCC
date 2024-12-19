@@ -33,7 +33,7 @@ if ($dados != 0) {
     $_SESSION['telefone'] = $telefone;
     header("Location: cad_aluno_index.php");
 } else {
-    $dados = cadastraAluno($nome, $email, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $telefone, $status, $perfil, $data);
+    $dados = cadastraAluno($nome, $curso, $ra, $email, $senha, $cep, $endereco, $numero, $bairro, $cidade, $uf, $telefone, $status, $perfil, $data);
 
     if ($dados == 1) {
         $_SESSION['texto_sucesso'] = 'Dados cadastrados com sucesso.';
