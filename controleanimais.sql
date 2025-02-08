@@ -19,6 +19,11 @@
 CREATE DATABASE IF NOT EXISTS `controleanimais` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `controleanimais`;
 
+CREATE TABLE agrupamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
 -- Copiando estrutura para tabela controleanimais.alimento
 CREATE TABLE IF NOT EXISTS `alimento` (
   `cod` int NOT NULL AUTO_INCREMENT,
