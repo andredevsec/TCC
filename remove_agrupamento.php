@@ -2,14 +2,14 @@
 session_start();
 $grupo_id = $_POST['grupo_id'];
 
-require_once('bd/bd_animal.php');
+require_once('bd/bd_agrupamento.php');
 
 $dados = deletaAgrupamento($grupo_id);
 if ($dados == 1) {
     $_SESSION['texto_sucesso'] = 'Agrupamento deletado com sucesso.';
-    header("Location: agrupamentos.php");
+    header("Location: agrupamento.php");
 } else {
     $_SESSION['texto_erro'] = 'Erro ao deletar agrupamento.';
-    header("Location: agrupamentos.php");
+    header("Location: agrupamento.php");
 }
 ?>

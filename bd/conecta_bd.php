@@ -4,7 +4,6 @@
 
         $servidor = "localhost";
         $usuario_bd = "root";
-        // $senha_bd = "";
         $senha_bd = "andre123";
         $banco = "controleanimais";
 

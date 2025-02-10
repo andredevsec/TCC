@@ -44,7 +44,7 @@
 		<li class="nav-item active">
 			<a class="nav-link" href="agrupamento.php">
 			<i class="fas fa-paw"></i>
-				<span>Agrupoamento</span></a>
+				<span>Agrupamento</span></a>
 				
 		</li>
 
